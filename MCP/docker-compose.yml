@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  # vLLM service - Local LLM with OpenAI-compatible API
+  vllm:
+    image: vllm/vllm-openai:latest
+    container_name: unity-agent-vllm
+    ports:
+      - "8080:8080"
+    volumes:
+      - vllm_cache:/root/.cache/huggingface
+    environment:
+      - HUGGING_FACE_HUB_TOKEN=${HUGGING_FACE_HUB_TOKEN:-}
+    command: >
+      --model Qwen/Qwen2.5-1.5B-Instruct
+      --port 8080
+      --max-model-len 4096
+      --enforce-eager
+      --gpu-memory-utilization 0.90
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 120s
+    restart: unless-stopped
+    networks:
+      - unity-agent-network
+
+  # MCP Server - Unity Agent decision maker
+  mcp-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: unity-agent-mcp
+    ports:
+      - "8000:8000"
+    environment:
+      - VLLM_HOST=http://vllm:8080
+      - VLLM_MODEL=Qwen/Qwen2.5-1.5B-Instruct
+    depends_on:
+      vllm:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    restart: unless-stopped
+    networks:
+      - unity-agent-network
+
+networks:
+  unity-agent-network:
+    driver: bridge
+
+volumes:
+  vllm_cache:
+    driver: local

@@ -1,0 +1,18 @@
+{
+  "agent_position": { "x": 1.5, "y": 0.0, "z": 2.3 },
+  "goal_position": { "x": 10.0, "y": 0.0, "z": 5.0 },
+  "distance_to_goal": 8.7,
+  "is_moving": true,
+  "nearby_objects": [
+    {
+      "name": "Obstacle1",
+      "distance": 2.5,
+      "position": { "x": 3.0, "y": 0.0, "z": 3.0 }
+    },
+    {
+      "name": "Wall",
+      "distance": 1.2,
+      "position": { "x": 2.0, "y": 0.0, "z": 2.5 }
+    }
+  ]
+}
