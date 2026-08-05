@@ -40,8 +40,23 @@ class Vector3Data(BaseModel):
 
 class NearbyObject(BaseModel):
     name: str
+    type: str = "other"  # "pickup", "container", "obstacle", "other"
     distance: float
     position: Vector3Data
+    is_pickable: bool = False
+
+
+class InventoryState(BaseModel):
+    is_carrying: bool = False
+    carried_object_name: str = ""
+
+
+class ContainerState(BaseModel):
+    current_count: int = 0
+    max_capacity: int = 5
+    is_full: bool = False
+    is_emptying: bool = False
+    position: Optional[Vector3Data] = None
 
 
 class EnvironmentState(BaseModel):
@@ -49,12 +64,20 @@ class EnvironmentState(BaseModel):
     goal_position: Optional[Vector3Data] = None
     distance_to_goal: float = 0.0
     is_moving: bool = False
+    has_reached_goal: bool = False
+    inventory: Optional[InventoryState] = None
+    container: Optional[ContainerState] = None
     nearby_objects: List[NearbyObject] = []
+    available_pickups: List[str] = []
 
 
 class DecisionRequest(BaseModel):
-    available_actions: List[str] = Field(default=["MoveTo", "Stop", "Resume", "SetGoal"])
-    goal_description: str = Field(default="Navigate to the goal efficiently")
+    available_actions: List[str] = Field(
+        default=["MoveTo", "Stop", "Resume", "SetGoal", "Pickup", "DropInContainer", "EmptyContainer"]
+    )
+    goal_description: str = Field(
+        default="Pick up objects and deliver them to the container. Empty the container when full."
+    )
 
 
 class CommandRequest(BaseModel):

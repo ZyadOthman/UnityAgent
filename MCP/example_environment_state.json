@@ -3,16 +3,47 @@
   "goal_position": { "x": 10.0, "y": 0.0, "z": 5.0 },
   "distance_to_goal": 8.7,
   "is_moving": true,
+  "has_reached_goal": false,
+  "inventory": {
+    "is_carrying": false,
+    "carried_object_name": ""
+  },
+  "container": {
+    "current_count": 2,
+    "max_capacity": 5,
+    "is_full": false,
+    "is_emptying": false,
+    "position": { "x": 10.0, "y": 0.0, "z": 5.0 }
+  },
   "nearby_objects": [
     {
-      "name": "Obstacle1",
+      "name": "Pickup_0",
+      "type": "pickup",
       "distance": 2.5,
-      "position": { "x": 3.0, "y": 0.0, "z": 3.0 }
+      "position": { "x": 3.0, "y": 0.5, "z": 3.0 },
+      "is_pickable": true
+    },
+    {
+      "name": "Pickup_1",
+      "type": "pickup",
+      "distance": 6.1,
+      "position": { "x": 7.0, "y": 0.5, "z": 4.0 },
+      "is_pickable": true
+    },
+    {
+      "name": "Container",
+      "type": "container",
+      "distance": 9.2,
+      "position": { "x": 10.0, "y": 0.0, "z": 5.0 },
+      "is_pickable": false
     },
     {
       "name": "Wall",
+      "type": "other",
       "distance": 1.2,
-      "position": { "x": 2.0, "y": 0.0, "z": 2.5 }
+      "position": { "x": 2.0, "y": 0.0, "z": 2.5 },
+      "is_pickable": false
     }
-  ]
+  ],
+  "available_pickups": ["Pickup_0", "Pickup_1", "Pickup_2"]
 }
