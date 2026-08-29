@@ -1,0 +1,22 @@
+[20/02/2026] - Consolidation de l’état de l’agent et des interactions
+⏱️ Durée de travail : 5h
+👥 Contributeurs : Moi
+
+🎯 Objectifs de la session
+Fiabiliser les états internes de l’agent.
+Rendre les interactions plus faciles à exploiter par le MCP.
+✅ Travail réalisé
+Ajout d’accesseurs et de vérifications pour connaître l’état de déplacement, l’objet porté et la cible active. Renforcement de la logique de ramassage, de dépôt et d’arrêt. Ajustement des conditions de proximité pour éviter que l’agent interagisse trop tôt ou trop tard avec les objets et le container.
+
+📊 Résultats/Observations
+L’état exposé par l’agent est maintenant plus lisible et plus utile pour une logique de décision externe. Les interactions sont plus stables pendant les tests manuels.
+
+🚧 Difficultés rencontrées
+La synchronisation entre état visuel, état logique et état réseau restait délicate. Une partie des corrections consistait surtout à éviter des écarts entre ce que le joueur voit et ce que le code considère comme vrai.
+
+➡️ Prochaines étapes
+Brancher les décisions du serveur sur les actions concrètes de l’agent.
+Ajouter des logs pour mieux suivre les séquences de comportement.
+Tester plusieurs cycles complets sans intervention manuelle.
+💭 Réflexions
+Le système devient plus robuste quand les états sont explicitement exposés. Cela simplifie autant le contrôle que le débogage.

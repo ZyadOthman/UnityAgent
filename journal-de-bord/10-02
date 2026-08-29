@@ -1,0 +1,23 @@
+[10/02/2026] - Gestion des objets ramassables
+⏱️ Durée de travail : 5h
+👥 Contributeurs : Moi
+
+🎯 Objectifs de la session
+Créer un comportement clair pour les objets collectables.
+Préparer leur interaction avec l’agent.
+✅ Travail réalisé
+Développement et ajustement du script des objets ramassables. Ajout du comportement visuel de repos avec rotation et léger mouvement de flottement pour rendre l’environnement plus lisible. Implémentation de la logique de ramassage, de désactivation du collider pendant le transport, puis de réinitialisation de l’objet pour permettre sa réutilisation.
+
+📊 Résultats/Observations
+Les objets sont désormais identifiables comme interactifs et peuvent suivre l’agent une fois ramassés. Le système est suffisamment simple pour être testé rapidement tout en restant réutilisable dans plusieurs scénarios.
+
+🚧 Difficultés rencontrées
+La principale difficulté a été de conserver un état cohérent entre l’affichage, la position réelle et l’état logique de l’objet. Il fallait éviter qu’un objet reste visuellement actif alors qu’il était censé être transporté ou réinitialisé.
+
+➡️ Prochaines étapes
+Relier le ramassage à la proximité de l’agent.
+Ajouter le dépôt dans un container.
+Vérifier la compatibilité avec le spawner d’objets.
+💭 Réflexions
+Le feedback visuel sur les objets aide beaucoup à comprendre l’état du système pendant les tests. C’est utile à la fois pour le gameplay et pour le débogage.
+

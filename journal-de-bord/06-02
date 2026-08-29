@@ -1,0 +1,23 @@
+[06/02/2026] - Initialisation du projet et cadrage technique
+⏱️ Durée de travail : 5h
+👥 Contributeurs : Moi
+
+🎯 Objectifs de la session
+Prendre en main la structure du projet Unity.
+Identifier les éléments nécessaires pour un agent contrôlé par MCP.
+✅ Travail réalisé
+Analyse de la scène principale, des scripts existants et de la logique générale du projet. Mise en place du cadre fonctionnel autour de l’agent Unity, du système de déplacement via NavMesh et des premières interactions avec les objets. Revue des composants déjà présents dans le projet pour comprendre le rôle de chaque script et la manière dont ils doivent coopérer.
+
+📊 Résultats/Observations
+Le projet s’oriente clairement vers un environnement d’exécution autonome piloté par une logique externe. Les scripts Agent, Container, PickupObject et ObjectSpawner forment une base cohérente pour simuler un comportement d’exploration, de ramassage et de dépôt.
+
+🚧 Difficultés rencontrées
+Besoin de clarifier le lien entre la logique Unity locale et les échanges avec le serveur MCP. La principale difficulté était de distinguer ce qui devait rester côté Unity et ce qui devait être décidé par le serveur.
+
+➡️ Prochaines étapes
+Finaliser la logique de déplacement de l’agent.
+Structurer les objets collectables et leur cycle de vie.
+Préparer la communication avec le serveur MCP.
+💭 Réflexions
+Le projet a une bonne base modulaire. Il faudra surtout veiller à garder une séparation nette entre simulation locale et prise de décision distante.
+

@@ -1,0 +1,23 @@
+[27/02/2026] - Finalisation de la boucle de décision
+⏱️ Durée de travail : 6h
+👥 Contributeurs : Moi
+
+🎯 Objectifs de la session
+Finaliser le lien entre l’état du monde et les actions du système.
+S’assurer que le serveur peut prendre des décisions exploitables.
+✅ Travail réalisé
+Finalisation de la structure des données envoyées au serveur MCP et vérification de la cohérence des informations d’état. Mise au point de la logique qui envoie l’environnement, attend une décision, puis exploite la réponse pour guider l’agent. Amélioration du contrôle de fréquence des requêtes pour éviter les doublons.
+
+📊 Résultats/Observations
+La boucle perception → décision → action est désormais bien définie. Le projet gagne en lisibilité technique et devient plus proche d’un vrai prototype d’agent autonome.
+
+🚧 Difficultés rencontrées
+La gestion des cas réseau instables reste un point d’attention. Il faut éviter qu’une absence de réponse bloque le comportement global.
+
+➡️ Prochaines étapes
+Tester la résistance du système aux erreurs.
+Faire une validation finale des interactions.
+Préparer un bilan technique du projet.
+💭 Réflexions
+Le projet ne repose plus seulement sur des scripts isolés, mais sur un enchaînement cohérent de responsabilités. C’est une évolution importante.
+

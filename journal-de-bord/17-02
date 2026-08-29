@@ -1,0 +1,23 @@
+[17/02/2026] - Début de l’intégration MCP
+⏱️ Durée de travail : 6h
+👥 Contributeurs : Moi
+
+🎯 Objectifs de la session
+Mettre en place le client Unity vers le serveur MCP.
+Définir les données de l’environnement à transmettre.
+✅ Travail réalisé
+Création du client MCP côté Unity afin d’envoyer régulièrement l’état de l’environnement. Structuration des données en objets sérialisables: position de l’agent, position de l’objectif, état du container, inventaire, objets proches et liste des objets disponibles. Préparation de la couche réseau pour permettre l’envoi vers le backend et la récupération de décisions d’action.
+
+📊 Résultats/Observations
+L’architecture devient plus claire: Unity sert de moteur de simulation, tandis que le serveur MCP peut prendre les décisions à partir de l’état courant. Les données envoyées sont suffisamment riches pour envisager un comportement contextuel.
+
+🚧 Difficultés rencontrées
+La sérialisation des données et l’organisation des classes internes nécessitaient une structure propre pour rester compatibles avec l’API. Il fallait aussi éviter les envois trop fréquents et les requêtes concurrentes.
+
+➡️ Prochaines étapes
+Implémenter la réception et l’exploitation des décisions.
+Tester les cas d’erreur réseau.
+Observer le comportement global en conditions réelles.
+💭 Réflexions
+Le projet prend une dimension plus “agentique” dès qu’on sépare l’observation, la décision et l’action. C’est une bonne base pour des itérations futures.
+

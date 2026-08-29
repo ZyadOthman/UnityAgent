@@ -1,0 +1,20 @@
+[15/02/2026] - Ajout du système de spawning d’objets
+⏱️ Durée de travail : 4h
+👥 Contributeurs : Moi
+
+🎯 Objectifs de la session
+Générer automatiquement des objets dans la scène.
+Éviter les placements trop proches du container.
+✅ Travail réalisé
+Développement du spawner d’objets avec génération aléatoire sur une zone définie. Ajout de contraintes pour maintenir une distance minimale avec le container et privilégier des positions valides sur la NavMesh. Mise en place d’une logique de réutilisation d’objets inactifs pour limiter les instanciations inutiles.
+
+📊 Résultats/Observations
+Le système rend la scène plus vivante et assure une disponibilité constante d’objets à collecter. La réutilisation d’objets permet également de garder une meilleure maîtrise des performances.
+
+🚧 Difficultés rencontrées
+La validation des positions de spawn n’était pas toujours fiable lorsqu’il n’y avait pas assez de place sur la NavMesh. Il a fallu prévoir une solution de secours pour éviter les blocages.
+
+➡️ Prochaines étapes
+Brancher le spawner au système d’état global.
+Tester les interactions en boucle complète.
+Préparer les données à envoyer au serveur MCP.

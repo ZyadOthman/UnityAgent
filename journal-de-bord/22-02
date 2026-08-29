@@ -1,0 +1,22 @@
+[22/02/2026] - Tests de bout en bout dans la scène Unity
+⏱️ Durée de travail : 4h30
+👥 Contributeurs : Moi
+
+🎯 Objectifs de la session
+Vérifier le comportement global dans la scène.
+Identifier les incohérences entre navigation, ramassage et dépôt.
+✅ Travail réalisé
+Lancement de tests dans la scène avec l’agent, le spawner et le container. Observation des séquences de déplacement vers les objets, du ramassage et du dépôt. Contrôle des comportements lorsque plusieurs objets sont présents et lorsque le container approche de sa capacité maximale.
+
+📊 Résultats/Observations
+Le scénario de base fonctionne. L’agent peut chercher un objet, le transporter puis le déposer. Les cycles répétés ont permis de repérer plusieurs points de friction, notamment sur les transitions d’état.
+
+🚧 Difficultés rencontrées
+Certains cas limites apparaissent quand l’agent atteint sa cible alors que l’objet n’est plus disponible ou quand le container change d’état pendant l’action. Ces cas demandaient des vérifications supplémentaires.
+
+➡️ Prochaines étapes
+Ajouter des sécurités supplémentaires.
+Améliorer la remontée d’informations dans les logs.
+Finaliser la boucle de comportement autonome.
+💭 Réflexions
+Les tests de bout en bout sont essentiels pour voir ce que la logique théorique ne montre pas. C’est là qu’on identifie les vrais problèmes d’intégration.

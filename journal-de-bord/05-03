@@ -1,0 +1,22 @@
+[05/03/2026] - Gestion des cas d’erreur et robustesse
+⏱️ Durée de travail : 4h30
+👥 Contributeurs : Moi
+
+🎯 Objectifs de la session
+Sécuriser les actions quand une ressource est indisponible.
+Rendre le système plus tolérant aux états partiels.
+✅ Travail réalisé
+Ajout de vérifications supplémentaires sur l’agent, le container et les objets ramassables avant d’exécuter une action. Traitement plus propre des cas où un objet est déjà pris, où l’agent est hors de portée ou où le container est occupé. Réduction des risques d’actions incohérentes pendant une session de test.
+
+📊 Résultats/Observations
+Le comportement est plus stable dans les cas limites. Les échecs sont mieux gérés et provoquent moins d’effets secondaires dans la scène.
+
+🚧 Difficultés rencontrées
+Certaines vérifications supplémentaires créent des conditions d’échec plus fréquentes, mais c’est préférable à un état incohérent. Il faut ensuite bien distinguer les vrais bugs des refus normaux d’action.
+
+➡️ Prochaines étapes
+Effectuer une dernière série de tests complets.
+Vérifier l’équilibre général du prototype.
+Préparer la synthèse finale.
+💭 Réflexions
+La robustesse n’est pas spectaculaire, mais elle fait la différence entre une démo fragile et un prototype crédible.

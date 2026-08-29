@@ -1,0 +1,23 @@
+[08/02/2026] - Mise en place du déplacement de l’agent
+⏱️ Durée de travail : 4h30
+👥 Contributeurs : Moi
+
+🎯 Objectifs de la session
+Stabiliser le déplacement de l’agent sur la NavMesh.
+Vérifier la gestion des cibles et de l’arrêt à proximité.
+✅ Travail réalisé
+Travail sur le comportement de l’agent pour lui permettre d’aller vers une position cible de manière fiable. Ajustement de la distance d’arrêt et ajout de vérifications pour savoir si l’agent a réellement atteint son objectif. Mise en place d’une logique permettant de stopper ou reprendre le déplacement selon les besoins du scénario.
+
+📊 Résultats/Observations
+Le déplacement est devenu plus prévisible. L’agent peut désormais se déplacer vers une cible définie et renvoyer un état exploitable pour la suite des décisions. La détection de fin de trajet est plus robuste qu’au départ.
+
+🚧 Difficultés rencontrées
+Les calculs de distance entre position réelle et distance restante du NavMeshAgent donnaient parfois des résultats divergents. Il a fallu combiner plusieurs critères pour éviter les faux positifs.
+
+➡️ Prochaines étapes
+Tester l’agent avec des objets interactifs dans la scène.
+Ajouter la logique de ramassage.
+Prévoir un état interne plus riche pour le MCP.
+💭 Réflexions
+La navigation est le socle du projet. Tant que ce point n’est pas stable, le reste des interactions ne peut pas être évalué correctement.
+

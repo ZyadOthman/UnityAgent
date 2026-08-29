@@ -1,0 +1,23 @@
+[24/02/2026] - Amélioration du feedback et du diagnostic
+⏱️ Durée de travail : 5h
+👥 Contributeurs : Moi
+
+🎯 Objectifs de la session
+Renforcer le suivi des actions de l’agent.
+Faciliter le diagnostic pendant l’exécution.
+✅ Travail réalisé
+Ajout et homogénéisation des messages de log autour des actions principales: déplacement, arrêt, ramassage, dépôt, état du container et erreurs de communication. Mise en forme des retours afin de rendre les traces plus lisibles pendant les tests. Vérification du comportement du système lorsque des actions échouent.
+
+📊 Résultats/Observations
+Le débogage devient plus rapide grâce à des traces plus explicites. Les logs permettent de comprendre en quelques lignes pourquoi une action a échoué, ce qui accélère l’itération.
+
+🚧 Difficultés rencontrées
+Un excès de logs peut vite rendre la lecture difficile. Il a fallu trouver un équilibre entre information utile et surcharge de sortie console.
+
+➡️ Prochaines étapes
+Stabiliser la communication avec le serveur MCP.
+Tester le système dans plusieurs configurations de scène.
+Préparer une démonstration propre du comportement complet.
+💭 Réflexions
+Dans un projet de ce type, la qualité du diagnostic compte presque autant que la logique elle-même. Sans retour clair, l’agent devient difficile à valider.
+

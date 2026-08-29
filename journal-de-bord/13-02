@@ -1,0 +1,23 @@
+[13/02/2026] - Mise en place du container et de la logique de dépôt
+⏱️ Durée de travail : 5h30
+👥 Contributeurs : Moi
+
+🎯 Objectifs de la session
+Créer un container capable de recevoir plusieurs objets.
+Gérer la notion de capacité maximale et d’état plein.
+✅ Travail réalisé
+Implémentation du container avec une capacité maximale, un rayon d’interaction et un système de compteur interne. Ajout d’un retour visuel basé sur la couleur du container selon son niveau de remplissage. Développement de la logique de dépôt pour permettre à l’agent de déposer un objet lorsqu’il est suffisamment proche.
+
+📊 Résultats/Observations
+Le container offre une mécanique simple mais efficace de collecte d’objets. Le changement de couleur permet de visualiser rapidement l’état de remplissage. La logique de limitation par capacité donne une contrainte utile au comportement de l’agent.
+
+🚧 Difficultés rencontrées
+Il a fallu bien gérer le cas où le container est plein ou en cours de vidage pour éviter des états incohérents. Le contrôle de l’état a nécessité plusieurs vérifications côté code.
+
+➡️ Prochaines étapes
+Ajouter un mécanisme d’emptying du container.
+Faire interagir l’agent avec le container de manière plus autonome.
+Commencer l’intégration avec le serveur MCP.
+💭 Réflexions
+Le container donne un objectif concret à l’agent. On commence à avoir une boucle de gameplay complète: chercher, ramasser, déposer, recommencer.
+
